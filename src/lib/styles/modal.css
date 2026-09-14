@@ -1,0 +1,31 @@
+/* ==========================================================================
+   MODALES Y DIÁLOGOS
+   ========================================================================== */
+
+.modal-backdrop {
+	@apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs;
+}
+
+.modal-container {
+	@apply w-full max-w-lg rounded-xl bg-white p-6 shadow-2xl transition-all;
+}
+
+.modal-header {
+	@apply mb-4 flex items-center justify-between border-b pb-3;
+}
+
+.modal-title {
+	@apply mt-1 text-lg font-bold text-gray-900;
+}
+
+.modal-close-btn {
+	@apply text-lg font-bold text-gray-400 transition-colors hover:text-gray-600;
+}
+
+.modal-info-box {
+	@apply mb-4 space-y-2 rounded-lg border border-gray-100 bg-gray-50 p-3 text-xs text-gray-700;
+}
+
+.modal-footer {
+	@apply flex justify-end gap-2 border-t pt-3;
+}

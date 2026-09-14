@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import '../lib/styles/layout.css';
+@import '../lib/styles/forms.css';
+@import '../lib/styles/cards.css';
+@import '../lib/styles/tables.css';
+@import '../lib/styles/modal.css';

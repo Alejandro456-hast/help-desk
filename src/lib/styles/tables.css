@@ -1,0 +1,43 @@
+/* ==========================================================================
+   TABLAS Y LISTADOS
+   ========================================================================== */
+
+.table-wrapper {
+	@apply overflow-x-auto;
+}
+
+.data-table {
+	@apply min-w-full divide-y divide-gray-200 text-sm;
+}
+
+.table-head {
+	@apply bg-gray-50;
+}
+
+.table-th {
+	@apply px-4 py-3 text-left font-medium text-gray-500;
+}
+
+.table-th-center {
+	@apply px-4 py-3 text-center font-medium text-gray-500;
+}
+
+.table-body {
+	@apply divide-y divide-gray-200 bg-white;
+}
+
+.table-row {
+	@apply transition-colors hover:bg-gray-50;
+}
+
+.table-cell {
+	@apply px-4 py-3 text-gray-700;
+}
+
+.table-cell-nowrap {
+	@apply px-4 py-3 whitespace-nowrap text-gray-600;
+}
+
+.table-cell-center {
+	@apply px-4 py-3 text-center whitespace-nowrap;
+}

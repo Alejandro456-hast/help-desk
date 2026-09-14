@@ -1,0 +1,51 @@
+/* ==========================================================================
+   LAYOUT & ESTRUCTURA GENERAL
+   ========================================================================== */
+
+.page-wrapper-light {
+	@apply min-h-screen bg-gray-50;
+}
+
+.page-wrapper-dark {
+	@apply min-h-screen bg-slate-100;
+}
+
+.page-container {
+	@apply container mx-auto p-4 md:p-8;
+}
+
+.navbar-client {
+	@apply mb-8 flex items-center justify-between rounded-lg border border-gray-100 bg-white p-4 shadow-sm md:p-6;
+}
+
+.navbar-admin {
+	@apply mb-8 flex flex-col items-center justify-between rounded-lg bg-slate-800 p-6 text-white shadow-lg md:flex-row;
+}
+
+.page-heading {
+	@apply text-2xl font-bold text-gray-800 md:text-3xl;
+}
+
+.page-heading-light {
+	@apply mb-4 text-2xl font-bold md:mb-0 md:text-3xl;
+}
+
+.nav-link-btn {
+	@apply rounded-md bg-blue-50 px-4 py-2 font-semibold text-blue-600 transition-colors hover:text-blue-800;
+}
+
+.nav-link-btn-dark {
+	@apply rounded-md border border-slate-600 bg-slate-700 px-4 py-2 font-semibold transition-colors hover:bg-slate-600;
+}
+
+.section-title {
+	@apply border-b pb-2 text-xl font-semibold text-gray-700;
+}
+
+.content-grid-client {
+	@apply grid grid-cols-1 gap-8 lg:grid-cols-3;
+}
+
+.content-grid-admin {
+	@apply grid grid-cols-1 gap-8 xl:grid-cols-2;
+}
