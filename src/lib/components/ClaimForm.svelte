@@ -1,4 +1,6 @@
 <script>
+	import './ClaimForm.css';
+
 	/** @type {{ productos?: any[] }} */
 	let { productos = [] } = $props();
 
@@ -114,7 +116,7 @@
 	};
 </script>
 
-<div class="space-y-4">
+<div class="claim-container">
 	<!-- Pestañas de navegación -->
 	<div class="tab-header">
 		<button
@@ -168,12 +170,12 @@
 			</div>
 
 			{#if errorMsg}
-				<div class="alert-error mb-4">{errorMsg}</div>
+				<div class="alert-error">{errorMsg}</div>
 			{/if}
 
 			{#if createdTicket}
-				<div class="alert-ticket-box mb-4">
-					<p class="text-sm font-semibold">{message}</p>
+				<div class="alert-ticket-box">
+					<p class="ticket-success-msg">{message}</p>
 					<div class="ticket-display-box">
 						<span class="ticket-code-accent">{createdTicket}</span>
 						<button type="button" onclick={copyTicket} class="btn-copy">
@@ -183,7 +185,7 @@
 					<button
 						type="button"
 						onclick={() => goToSearchTicket(createdTicket)}
-						class="mt-3 text-xs font-semibold text-blue-600 underline hover:text-blue-800"
+						class="btn-link-track"
 					>
 						Ver seguimiento de este ticket &rarr;
 					</button>
@@ -200,14 +202,14 @@
 			<form onsubmit={checkTicket}>
 				<div class="form-group">
 					<label for="search_ticket" class="form-label">Número de Ticket</label>
-					<div class="flex gap-2">
+					<div class="search-input-group">
 						<input
 							type="text"
 							id="search_ticket"
 							bind:value={searchTicket}
 							placeholder="Ej: TK-A7B2X9"
 							required
-							class="form-input flex-1 uppercase"
+							class="form-input-search"
 						/>
 						<button type="submit" disabled={searchLoading} class="btn-search">
 							{searchLoading ? '...' : 'Buscar'}
@@ -234,26 +236,26 @@
 					</div>
 
 					<div class="ticket-details">
-						<p><strong class="text-gray-700">Producto:</strong> {ticketData.producto_nombre}</p>
-						<p><strong class="text-gray-700">Asunto:</strong> {ticketData.asunto}</p>
+						<p><span class="ticket-field-label">Producto:</span> {ticketData.producto_nombre}</p>
+						<p><span class="ticket-field-label">Asunto:</span> {ticketData.asunto}</p>
 						<p>
-							<strong class="text-gray-700">Fecha:</strong>
+							<span class="ticket-field-label">Fecha:</span>
 							{new Date(ticketData.creado_en).toLocaleString()}
 						</p>
 					</div>
 
 					<div class="ticket-user-msg">
-						<strong class="mb-1 block text-gray-800">Tu mensaje:</strong>
+						<span class="ticket-user-msg-title">Tu mensaje:</span>
 						{ticketData.mensaje}
 					</div>
 
 					<!-- Respuesta del Administrador -->
 					{#if ticketData.respuesta}
 						<div class="ticket-response-box">
-							<strong class="mb-1 block font-semibold text-blue-900">
+							<span class="ticket-response-title">
 								Respuesta del Soporte ({new Date(ticketData.respondido_en).toLocaleDateString()}):
-							</strong>
-							<p class="whitespace-pre-line text-blue-800">{ticketData.respuesta}</p>
+							</span>
+							<p class="ticket-response-text">{ticketData.respuesta}</p>
 						</div>
 					{:else}
 						<p class="ticket-pending-box">

@@ -1,9 +1,11 @@
 <script>
+	import './ProductList.css';
+
 	/** @type {{ productos?: any[] }} */
 	let { productos = [] } = $props();
 </script>
 
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+<div class="product-grid">
 	{#each productos as producto}
 		<div class="product-card">
 			<h3 class="product-title">{producto.nombre}</h3>

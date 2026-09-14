@@ -1,4 +1,6 @@
 <script>
+	import './ClaimList.css';
+
 	/** @type {{ reclamos?: any[], onupdate?: () => void }} */
 	let { reclamos = [], onupdate } = $props();
 
@@ -69,7 +71,7 @@
 </script>
 
 {#if reclamos.length === 0}
-	<p class="text-gray-500 italic">No hay reclamos registrados.</p>
+	<p class="empty-claims-notice">No hay reclamos registrados.</p>
 {:else}
 	<div class="table-wrapper">
 		<table class="data-table">
@@ -85,18 +87,18 @@
 			<tbody class="table-body">
 				{#each reclamos as reclamo}
 					<tr class="table-row">
-						<td class="table-cell-nowrap font-mono font-bold text-blue-700">
+						<td class="table-cell-ticket">
 							{reclamo.ticket || `TK-${reclamo.id}`}
 						</td>
 						<td class="table-cell-nowrap">
 							{new Date(reclamo.creado_en).toLocaleDateString()}
 						</td>
 						<td class="table-cell">
-							<p class="font-medium text-gray-800">{reclamo.producto_nombre}</p>
-							<a href="mailto:{reclamo.email_cliente}" class="text-xs text-blue-600 hover:underline"
-								>{reclamo.email_cliente}</a
-							>
-							<p class="mt-1 text-xs font-semibold text-gray-700">{reclamo.asunto}</p>
+							<p class="claim-prod-title">{reclamo.producto_nombre}</p>
+							<a href="mailto:{reclamo.email_cliente}" class="claim-client-email">
+								{reclamo.email_cliente}
+							</a>
+							<p class="claim-subject">{reclamo.asunto}</p>
 						</td>
 						<td class="table-cell-nowrap">
 							{#if reclamo.estado === 'Resuelto'}
@@ -125,7 +127,7 @@
 		<div class="modal-container">
 			<div class="modal-header">
 				<div>
-					<span class="rounded bg-blue-100 px-2 py-0.5 font-mono text-xs font-bold text-blue-800">
+					<span class="modal-ticket-badge">
 						{selectedClaim.ticket || `TK-${selectedClaim.id}`}
 					</span>
 					<h3 class="modal-title">Gestionar Reclamo</h3>
@@ -134,12 +136,12 @@
 			</div>
 
 			<div class="modal-info-box">
-				<p><strong class="text-gray-900">Cliente:</strong> {selectedClaim.email_cliente}</p>
-				<p><strong class="text-gray-900">Producto:</strong> {selectedClaim.producto_nombre}</p>
-				<p><strong class="text-gray-900">Asunto:</strong> {selectedClaim.asunto}</p>
-				<div class="mt-2 rounded border border-gray-200 bg-white p-2">
-					<strong class="mb-1 block text-gray-900">Mensaje del cliente:</strong>
-					<p class="whitespace-pre-line text-gray-800">{selectedClaim.mensaje}</p>
+				<p><span class="modal-info-label">Cliente:</span> {selectedClaim.email_cliente}</p>
+				<p><span class="modal-info-label">Producto:</span> {selectedClaim.producto_nombre}</p>
+				<p><span class="modal-info-label">Asunto:</span> {selectedClaim.asunto}</p>
+				<div class="modal-user-msg-box">
+					<span class="modal-msg-title">Mensaje del cliente:</span>
+					<p class="modal-msg-text">{selectedClaim.mensaje}</p>
 				</div>
 			</div>
 
@@ -165,15 +167,15 @@
 				</div>
 
 				{#if saveError}
-					<div class="alert-error mb-4">{saveError}</div>
+					<div class="alert-error">{saveError}</div>
 				{/if}
 				{#if saveMessage}
-					<div class="alert-success mb-4">{saveMessage}</div>
+					<div class="alert-success">{saveMessage}</div>
 				{/if}
 
 				<div class="modal-footer">
 					<button type="button" onclick={closeModal} class="btn-secondary"> Cancelar </button>
-					<button type="submit" disabled={saving} class="btn-search">
+					<button type="submit" disabled={saving} class="btn-save-modal">
 						{saving ? 'Guardando...' : 'Guardar y Notificar'}
 					</button>
 				</div>

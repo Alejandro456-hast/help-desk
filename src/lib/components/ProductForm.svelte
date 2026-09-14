@@ -1,4 +1,6 @@
 <script>
+	import './ProductForm.css';
+
 	let form = $state({
 		nombre: '',
 		descripcion: '',
@@ -38,7 +40,7 @@
 	};
 </script>
 
-<form onsubmit={submitProduct}>
+<form onsubmit={submitProduct} class="product-form">
 	<div class="form-group">
 		<label for="nombre" class="form-label">Nombre del Producto</label>
 		<input type="text" id="nombre" bind:value={form.nombre} required class="form-input" />
@@ -70,13 +72,13 @@
 	</div>
 
 	{#if errorMsg}
-		<div class="alert-error mb-4">{errorMsg}</div>
+		<div class="alert-error">{errorMsg}</div>
 	{/if}
 	{#if message}
-		<div class="alert-success mb-4">{message}</div>
+		<div class="alert-success">{message}</div>
 	{/if}
 
-	<button type="submit" disabled={loading} class="btn-dark">
+	<button type="submit" disabled={loading} class="btn-submit-product">
 		{loading ? 'Guardando...' : 'Guardar Producto'}
 	</button>
 </form>

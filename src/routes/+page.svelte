@@ -1,4 +1,5 @@
 <script>
+	import './home.css';
 	import { onMount } from 'svelte';
 	import ProductList from '$lib/components/ProductList.svelte';
 	import ClaimForm from '$lib/components/ClaimForm.svelte';
@@ -32,18 +33,16 @@
 
 		<div class="content-grid-client">
 			<!-- Columna principal (Productos) -->
-			<div class="space-y-6 lg:col-span-2">
+			<div class="products-column">
 				<h2 class="section-title">Nuestros Productos</h2>
 				{#if loading}
-					<div class="animate-pulse space-y-4">
-						<div class="h-10 w-full rounded bg-gray-300"></div>
-						<div class="h-10 w-full rounded bg-gray-300"></div>
-						<div class="h-10 w-full rounded bg-gray-300"></div>
+					<div class="skeleton-loading">
+						<div class="skeleton-item"></div>
+						<div class="skeleton-item"></div>
+						<div class="skeleton-item"></div>
 					</div>
 				{:else if productos.length === 0}
-					<p class="rounded bg-white p-4 text-gray-500 italic shadow-sm">
-						No hay productos disponibles por el momento.
-					</p>
+					<p class="empty-notice">No hay productos disponibles por el momento.</p>
 				{:else}
 					<ProductList {productos} />
 				{/if}
@@ -51,7 +50,7 @@
 
 			<!-- Sidebar (Help Desk) -->
 			<div class="card-panel-sticky">
-				<h2 class="mb-4 border-b pb-2 text-xl font-semibold text-gray-800">Help Desk (Reclamos)</h2>
+				<h2 class="sidebar-title">Help Desk (Reclamos)</h2>
 				<ClaimForm {productos} />
 			</div>
 		</div>

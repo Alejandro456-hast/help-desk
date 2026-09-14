@@ -1,0 +1,162 @@
+@reference "tailwindcss";
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DE: ClaimList.svelte (Y Modal de Respuesta)
+   ========================================================================== */
+
+.empty-claims-notice {
+	@apply italic text-gray-500;
+}
+
+.table-wrapper {
+	@apply overflow-x-auto;
+}
+
+.data-table {
+	@apply min-w-full divide-y divide-gray-200 text-sm;
+}
+
+.table-head {
+	@apply bg-gray-50;
+}
+
+.table-th {
+	@apply px-4 py-3 text-left font-medium text-gray-500;
+}
+
+.table-th-center {
+	@apply px-4 py-3 text-center font-medium text-gray-500;
+}
+
+.table-body {
+	@apply divide-y divide-gray-200 bg-white;
+}
+
+.table-row {
+	@apply transition-colors hover:bg-gray-50;
+}
+
+.table-cell {
+	@apply px-4 py-3 text-gray-700;
+}
+
+.table-cell-nowrap {
+	@apply whitespace-nowrap px-4 py-3 text-gray-600;
+}
+
+.table-cell-ticket {
+	@apply whitespace-nowrap px-4 py-3 font-mono font-bold text-blue-700;
+}
+
+.table-cell-center {
+	@apply whitespace-nowrap px-4 py-3 text-center;
+}
+
+.claim-prod-title {
+	@apply font-medium text-gray-800;
+}
+
+.claim-client-email {
+	@apply text-xs text-blue-600 hover:underline;
+}
+
+.claim-subject {
+	@apply mt-1 text-xs font-semibold text-gray-700;
+}
+
+.btn-action-small {
+	@apply rounded bg-slate-800 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-slate-700;
+}
+
+.btn-secondary {
+	@apply rounded-md border border-gray-300 px-4 py-2 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-100;
+}
+
+.btn-save-modal {
+	@apply rounded-md bg-blue-600 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-blue-700 disabled:opacity-50;
+}
+
+.badge-pending {
+	@apply rounded-full bg-yellow-100 px-2.5 py-0.5 text-xs font-semibold text-yellow-800;
+}
+
+.badge-progress {
+	@apply rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800;
+}
+
+.badge-resolved {
+	@apply rounded-full bg-green-100 px-2.5 py-0.5 text-xs font-semibold text-green-800;
+}
+
+/* Modal de Respuesta */
+.modal-backdrop {
+	@apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-xs;
+}
+
+.modal-container {
+	@apply w-full max-w-lg rounded-xl bg-white p-6 shadow-2xl transition-all;
+}
+
+.modal-header {
+	@apply mb-4 flex items-center justify-between border-b pb-3;
+}
+
+.modal-ticket-badge {
+	@apply rounded bg-blue-100 px-2 py-0.5 font-mono text-xs font-bold text-blue-800;
+}
+
+.modal-title {
+	@apply mt-1 text-lg font-bold text-gray-900;
+}
+
+.modal-close-btn {
+	@apply text-lg font-bold text-gray-400 transition-colors hover:text-gray-600;
+}
+
+.modal-info-box {
+	@apply mb-4 space-y-2 rounded-lg border border-gray-100 bg-gray-50 p-3 text-xs text-gray-700;
+}
+
+.modal-info-label {
+	@apply font-bold text-gray-900;
+}
+
+.modal-user-msg-box {
+	@apply mt-2 rounded border border-gray-200 bg-white p-2;
+}
+
+.modal-msg-title {
+	@apply mb-1 block font-bold text-gray-900;
+}
+
+.modal-msg-text {
+	@apply whitespace-pre-line text-gray-800;
+}
+
+.form-group {
+	@apply mb-4;
+}
+
+.form-label {
+	@apply mb-1 block text-sm font-medium text-gray-700;
+}
+
+.form-select {
+	@apply w-full rounded-md border border-gray-300 p-2 text-sm text-gray-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500;
+}
+
+.form-textarea {
+	@apply w-full rounded-md border border-gray-300 p-2 text-sm text-gray-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500;
+}
+
+.alert-error {
+	@apply mb-4 rounded-md bg-red-100 p-3 text-sm text-red-700;
+}
+
+.alert-success {
+	@apply mb-4 rounded-md bg-green-100 p-3 text-sm text-green-700;
+}
+
+.modal-footer {
+	@apply flex justify-end gap-2 border-t pt-3;
+}

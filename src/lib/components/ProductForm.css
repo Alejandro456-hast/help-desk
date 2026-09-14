@@ -1,0 +1,41 @@
+@reference "tailwindcss";
+
+/* ==========================================================================
+   ESTILOS EXCLUSIVOS DE: ProductForm.svelte
+   ========================================================================== */
+
+.product-form {
+	@apply space-y-4;
+}
+
+.form-group {
+	@apply mb-4;
+}
+
+.form-label {
+	@apply mb-1 block text-sm font-medium text-gray-700;
+}
+
+.form-input {
+	@apply w-full rounded-md border border-gray-300 p-2 text-sm text-gray-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500;
+}
+
+.form-textarea {
+	@apply w-full rounded-md border border-gray-300 p-2 text-sm text-gray-900 transition-colors focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500;
+}
+
+.form-grid-2 {
+	@apply grid grid-cols-2 gap-4;
+}
+
+.alert-error {
+	@apply mb-4 rounded-md bg-red-100 p-3 text-sm text-red-700;
+}
+
+.alert-success {
+	@apply mb-4 rounded-md bg-green-100 p-3 text-sm text-green-700;
+}
+
+.btn-submit-product {
+	@apply w-full rounded-md bg-slate-800 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-700 disabled:opacity-50;
+}
