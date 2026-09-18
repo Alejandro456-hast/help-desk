@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import ProductList from '$lib/components/ProductList.svelte';
 	import ClaimForm from '$lib/components/ClaimForm.svelte';
+	import LiveWidgetsBar from '$lib/components/LiveWidgetsBar.svelte';
 
 	/** @type {any[]} */
 	let productos = $state([]);
@@ -30,6 +31,9 @@
 			<h1 class="page-heading">Catálogo de Productos</h1>
 			<a href="/admin" class="nav-link-btn">Acceso Admin &rarr;</a>
 		</header>
+
+		<!-- Barra de Servicios y APIs en Vivo -->
+		<LiveWidgetsBar theme="light" />
 
 		<div class="content-grid-client">
 			<!-- Columna principal (Productos) -->

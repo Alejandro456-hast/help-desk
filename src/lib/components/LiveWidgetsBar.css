@@ -1,0 +1,350 @@
+.widgets-wrapper {
+	width: 100%;
+	margin-bottom: 2rem;
+	transition: all 0.3s ease;
+}
+
+.widgets-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1rem;
+	width: 100%;
+}
+
+.widget-card {
+	border-radius: 1rem;
+	padding: 1rem 1.15rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+	cursor: default;
+}
+
+.widget-card:hover {
+	transform: translateY(-2px);
+}
+
+/* Light Theme Styling */
+.theme-light .widget-card {
+	background: #ffffff;
+	border: 1px solid #e2e8f0;
+	box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+	color: #1e293b;
+}
+
+.theme-light .widget-card:hover {
+	border-color: #cbd5e1;
+	box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
+}
+
+.theme-light .widget-tag {
+	color: #64748b;
+}
+
+.theme-light .city-select,
+.theme-light .weather-select,
+.theme-light .calc-input {
+	background: #f8fafc;
+	border: 1px solid #cbd5e1;
+	color: #0f172a;
+}
+
+/* Dark Theme Styling */
+.theme-dark .widget-card {
+	background: #1e293b;
+	border: 1px solid #334155;
+	box-shadow: 0 4px 14px -2px rgba(0, 0, 0, 0.3);
+	color: #f8fafc;
+}
+
+.theme-dark .widget-card:hover {
+	border-color: #475569;
+	box-shadow: 0 8px 22px -4px rgba(0, 0, 0, 0.4);
+}
+
+.theme-dark .widget-tag {
+	color: #94a3b8;
+}
+
+.theme-dark .city-select,
+.theme-dark .weather-select,
+.theme-dark .calc-input {
+	background: #0f172a;
+	border: 1px solid #475569;
+	color: #f8fafc;
+}
+
+/* Header Row */
+.widget-header-row {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-bottom: 0.65rem;
+}
+
+.widget-icon {
+	font-size: 1.15rem;
+	line-height: 1;
+}
+
+.widget-tag {
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+
+.widget-body {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	flex: 1;
+}
+
+.widget-loading {
+	font-size: 0.8rem;
+	color: #94a3b8;
+	font-style: italic;
+}
+
+/* Clock Widget */
+.clock-display {
+	display: flex;
+	flex-direction: column;
+}
+
+.clock-time {
+	font-size: 1.35rem;
+	font-weight: 800;
+	font-variant-numeric: tabular-nums;
+	letter-spacing: -0.02em;
+	color: #2563eb;
+}
+
+.theme-dark .clock-time {
+	color: #60a5fa;
+}
+
+.clock-date {
+	font-size: 0.75rem;
+	color: #64748b;
+	text-transform: capitalize;
+}
+
+.theme-dark .clock-date {
+	color: #94a3b8;
+}
+
+.city-select,
+.weather-select {
+	font-size: 0.75rem;
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	outline: none;
+	width: fit-content;
+	max-width: 100%;
+}
+
+/* Currency Widget */
+.currency-row {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+}
+
+.currency-main {
+	font-size: 1.1rem;
+	color: #059669;
+}
+
+.theme-dark .currency-main {
+	color: #34d399;
+}
+
+.currency-main strong {
+	font-weight: 800;
+	font-size: 1.25rem;
+}
+
+.currency-sub {
+	font-size: 0.75rem;
+	color: #64748b;
+}
+
+.theme-dark .currency-sub {
+	color: #94a3b8;
+}
+
+.quick-calc {
+	margin-top: 0.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.calc-label {
+	font-size: 0.7rem;
+	color: #64748b;
+}
+
+.theme-dark .calc-label {
+	color: #94a3b8;
+}
+
+.calc-input-group {
+	display: flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+}
+
+.calc-input {
+	width: 55px;
+	padding: 0.2rem 0.35rem;
+	border-radius: 0.35rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-align: center;
+}
+
+/* Weather Widget */
+.weather-select {
+	margin-left: auto;
+}
+
+.weather-row {
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+}
+
+.weather-temp {
+	font-size: 1.6rem;
+	font-weight: 800;
+	color: #d97706;
+}
+
+.theme-dark .weather-temp {
+	color: #fbbf24;
+}
+
+.weather-details {
+	display: flex;
+	flex-direction: column;
+}
+
+.weather-status {
+	font-size: 0.85rem;
+	font-weight: 700;
+}
+
+.weather-sub {
+	font-size: 0.7rem;
+	color: #64748b;
+}
+
+.theme-dark .weather-sub {
+	color: #94a3b8;
+}
+
+/* Quote Widget */
+.btn-refresh-quote {
+	margin-left: auto;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 0.85rem;
+	padding: 0;
+	opacity: 0.7;
+	transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-refresh-quote:hover {
+	opacity: 1;
+	transform: rotate(45deg);
+}
+
+.quote-text {
+	font-size: 0.78rem;
+	font-style: italic;
+	line-height: 1.35;
+	color: #334155;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.theme-dark .quote-text {
+	color: #cbd5e1;
+}
+
+.quote-author {
+	font-size: 0.7rem;
+	font-weight: 700;
+	color: #64748b;
+	margin-top: 0.2rem;
+}
+
+.theme-dark .quote-author {
+	color: #94a3b8;
+}
+
+/* Status / IP Widget */
+.status-live-dot {
+	margin-left: auto;
+	font-size: 0.7rem;
+	font-weight: 700;
+	color: #10b981;
+	background: rgba(16, 185, 129, 0.12);
+	padding: 0.15rem 0.4rem;
+	border-radius: 9999px;
+}
+
+.status-row {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	font-size: 0.78rem;
+}
+
+.status-ip-label {
+	color: #64748b;
+}
+
+.theme-dark .status-ip-label {
+	color: #94a3b8;
+}
+
+.status-ip-val {
+	background: rgba(99, 102, 241, 0.1);
+	color: #6366f1;
+	font-weight: 700;
+	padding: 0.1rem 0.35rem;
+	border-radius: 0.35rem;
+	font-size: 0.75rem;
+}
+
+.theme-dark .status-ip-val {
+	background: rgba(129, 140, 248, 0.15);
+	color: #a5b4fc;
+}
+
+.status-sub {
+	margin-top: 0.2rem;
+}
+
+.badge-secure {
+	font-size: 0.68rem;
+	font-weight: 600;
+	color: #059669;
+}
+
+.theme-dark .badge-secure {
+	color: #34d399;
+}

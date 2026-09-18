@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import ProductForm from '$lib/components/ProductForm.svelte';
 	import ClaimList from '$lib/components/ClaimList.svelte';
+	import LiveWidgetsBar from '$lib/components/LiveWidgetsBar.svelte';
 
 	/** @type {any[]} */
 	let reclamos = $state([]);
@@ -32,6 +33,9 @@
 			<h1 class="page-heading-light">Dashboard Administrativo</h1>
 			<a href="/" class="nav-link-btn-dark">&larr; Volver a la Tienda</a>
 		</header>
+
+		<!-- Barra de Servicios y APIs en Vivo -->
+		<LiveWidgetsBar theme="dark" />
 
 		<div class="content-grid-admin">
 			<div class="card-panel-admin-blue">
