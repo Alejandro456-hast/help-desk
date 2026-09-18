@@ -1,8 +1,20 @@
 import { json } from '@sveltejs/kit';
 import { pool } from '$lib/server/db';
 
-export async function GET() {
+/** @param {{ url: URL }} param0 */
+export async function GET({ url }) {
 	try {
+		const id = url.searchParams.get('id');
+
+		if (id) {
+			/** @type {any} */
+			const [rows] = await pool.query('SELECT * FROM productos WHERE id = ?', [id]);
+			if (Array.isArray(rows) && rows.length > 0) {
+				return json(rows[0]);
+			}
+			return json({ error: 'Producto no encontrado' }, { status: 404 });
+		}
+
 		const [rows] = await pool.query('SELECT * FROM productos ORDER BY creado_en DESC');
 		return json(rows);
 	} catch (error) {
